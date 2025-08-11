@@ -1,32 +1,61 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Login Jalan Jalan</title>
-        <link rel="stylesheet" href="login.css">
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
-        <link rel="stylesheet" href="../fontawesome-free-5.15.4-web/css/all.min.css">
-    </head>
-    <body>
-        <a href="../index.html" class="box-kembali">
-            <button class="kembali tombol">Home</button>
-        </a>
-        <a href="#" class="box-daftar">
-            <button class="daftra tombol">Daftar</button>
-        </a>
-        <div class="container">
-            <div class="login-box">
-                <h1>Login</h1>
-                <div class="text-box">
-                    <i class="fa fa-user" aria-hidden="true"></i>
-                    <input type="text" placeholder="Username">
-                </div>
-                <div class="text-box">
-                    <i class="fa fa-lock" aria-hidden="true"></i>
-                    <input type="password" placeholder="Password">
-                </div>
-                <input class="btn" type="button" value="Sign In">
-            </div>
-        </div>
-        
-    </body>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Go Travel</title>
+    <link rel="stylesheet" href="login.css" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+  </head>
+  <body>
+    <header class="login-header">
+      <div class="container">
+        <nav class="login-nav">
+          <a href="../index.html" class="nav-button nav-button--outline">
+            Home
+          </a>
+          <a href="register.html" class="nav-button nav-button--primary">
+            Daftar
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="login-main">
+      <div class="container">
+        <section class="login-section">
+          <div class="login-card">
+            <h1 class="login-title">Login</h1>
+
+            <form class="login-form">
+              <div class="input-group">
+                <i class="fas fa-user input-group__icon"></i>
+                <input
+                  type="text"
+                  placeholder="Username"
+                  class="form-input"
+                  required
+                />
+              </div>
+
+              <div class="input-group">
+                <i class="fas fa-lock input-group__icon"></i>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  class="form-input"
+                  required
+                />
+              </div>
+
+              <button type="submit" class="submit-button">Sign In</button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
 </html>

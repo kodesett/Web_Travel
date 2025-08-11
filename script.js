@@ -1,35 +1,29 @@
-const tombolPesan = document.querySelectorAll('.pemesanan .top button');
-const contenPesan = document.querySelectorAll('.pemesanan .content');
-for(let i=0; i<tombolPesan.length; i++){
-    tombolPesan[i].addEventListener('click', function(){
-        for(let i=0; i<tombolPesan.length; i++){
-            tombolPesan[i].classList.remove('biru')
-            contenPesan[i].classList.add('pesan-nonActive')
-        }
-        tombolPesan[i].classList.add('biru');
-        contenPesan[i].classList.remove('pesan-nonActive')
-    })
+// Booking Tabs
+const bookTabButtons = document.querySelectorAll(
+  ".booking .booking__tabs .tab-btn"
+);
+const bookingContents = document.querySelectorAll(".booking .booking__content");
+for (let i = 0; i < bookTabButtons.length; i++) {
+  bookTabButtons[i].addEventListener("click", function () {
+    for (let i = 0; i < bookTabButtons.length; i++) {
+      bookTabButtons[i].classList.remove("tab-btn--active");
+      bookingContents[i].classList.add("hidden");
+    }
+    bookTabButtons[i].classList.add("tab-btn--active");
+    bookingContents[i].classList.remove("hidden");
+  });
 }
 
+// Toggle review content when avatar is clicked
+const reviewCards = document.querySelectorAll(".review-card");
 
+reviewCards.forEach((avatar) => {
+  avatar.addEventListener("click", function (e) {
+    const reviewCard = e.target.closest(".review-card");
+    const reviewContent = reviewCard.querySelector(".review-card__content");
 
-const boxKota = document.querySelectorAll('.content-kota .box');
-for(let i=0; i<boxKota.length; i++){
-    const namaKota= boxKota[i].getAttribute('id');
-    boxKota[i].style.backgroundImage = 'url(img/kota/'+namaKota+'.jpg)'
-}
-
-
-
-// penilaian
-const fotoPenilai = document.querySelectorAll('.foto-penilai')
-for(let i=0; i<fotoPenilai.length; i++){
-    fotoPenilai[i].addEventListener('click', function(e){
-        // e.target.previousElementSibling.classList.toggle('hide-penilaian')
-        e.target.nextElementSibling.classList.toggle('hide-penilaian')
-        // e.target.nextElementSibling.classList.toggle('show-box')
-        e.target.parentElement.classList.toggle('show-box')
-    })
-}
-
-
+    // Toggle expanded state
+    reviewCard.classList.toggle("review-card--expanded");
+    reviewContent.classList.toggle("review-card__content--expanded");
+  });
+});
